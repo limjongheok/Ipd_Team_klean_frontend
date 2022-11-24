@@ -1,12 +1,13 @@
 #login_btn{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #ffffff;
-    font-weight: 550;
+    font-weight: 500;
     display: inline-block;
     font-family: Pretendard Variable;
     border-radius: 10px;
     background-color: rgb(46,106,248);
-    
+    width: 14rem;
+    border: none;
     height: 60px;
 }
 
@@ -56,7 +57,7 @@
 .sign_in_font{
     height: 100%;
     font-weight:630;
-    font-size: 3rem;
+    font-size: 2.7rem;
     font-family: Pretendard Variable;
     padding: none;
     margin: 40px;
@@ -65,12 +66,8 @@
 }
 
 
-
-
 .Content{
     text-align: center;
-    
-   
 }
 
 .Logindiv{
@@ -78,14 +75,35 @@
     margin-top: 40px;
     width: 100%;
 }
-.Button{
-    
-    width: 14rem;
-    border: none;
-}
 
 
 
 
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable.css");
+
+
+@media  screen and (max-width:512px) {
+    .MainContent{
+        
+        width: 14rem;
+        
+    
+    }
+
+
+    .sign_in_font{
+        font-size: 2.3rem;
+        margin: 30px;
+    }
+
+
+    #login_btn{
+        font-size: 1.1rem;
+        font-weight: 500;
+        width: 10rem;
+        height: 40px;
+    }
+
+    
+}

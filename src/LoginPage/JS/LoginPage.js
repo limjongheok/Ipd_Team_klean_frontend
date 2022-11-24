@@ -9,14 +9,14 @@ function LoginPage(){
     return(
         <div>
             <Grid container>
-                <Grid item xs={6} id="loginPicture">
+                <Grid item xs={1} sm={6} id="loginPicture">
                     <LoginPicture/>
 
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={10} sm={6}>
                     <LoginFunction id="loginFunction"/>
-
                 </Grid>
+                <Grid item xs={1}></Grid>
 
             </Grid>
             

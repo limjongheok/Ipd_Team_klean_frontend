@@ -1,8 +1,8 @@
 
 import React from "react";
-import {Route,Routes, useParams} from 'react-router-dom'
+import {Route,Routes} from 'react-router-dom'
 import LoginPage from "./LoginPage/JS/LoginPage";
-import MainPage from "./MainPage/MainPage";
+import MainPage from "./MainPage/JS/MainPage";
 function UserRouter(){
 
     const token = localStorage.getItem("ACCESS_TOKEN")

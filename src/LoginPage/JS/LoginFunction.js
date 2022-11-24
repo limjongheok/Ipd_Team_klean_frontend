@@ -1,14 +1,22 @@
 import React from "react";
-import {Button, TextField, Grid, Container, Typography, Checkbox} from "@material-ui/core"
+import { TextField, Grid, Container, Typography, Checkbox} from "@material-ui/core"
 import {signin} from "../../Api/ApiService";
+import { makeStyles } from "@material-ui/styles";
 import "../CSS/LoginFunction.css"
 
 
 
+const useStyles = makeStyles({
+ input: {
+    background: "rgb(243,243,243)",
+  
+  },
+});
+
 
 const LoginFunction = () => {
   
-  
+   const classes = useStyles();
 
 
     const handleSubmit = (event) => {
@@ -19,6 +27,7 @@ const LoginFunction = () => {
       const password = data.get("password");
       // ApiService의 signin 메서드를 사용 해 로그인.
       signin({ email: email, password: password });
+      
     };
   
     return (
@@ -35,8 +44,7 @@ const LoginFunction = () => {
             </Grid>
         </Grid>
         </div>
-      
-        
+    
 
         <form  onSubmit={handleSubmit}>
           {" "}
@@ -44,20 +52,21 @@ const LoginFunction = () => {
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <TextField
-                variant="filled"
+                variant="outlined"
                 required
                 fullWidth
                 id="email"
                 label="아이디 또는 이메일"
                 name="email"
                 autoComplete="email"  
-                
+                inputProps={{ className: classes.input }}
+        
                 
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
-                variant="filled"
+                variant="outlined"
                 required
                 fullWidth
                 name="password"
@@ -65,6 +74,7 @@ const LoginFunction = () => {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                inputProps={{ className: classes.input }}
            
                 
                 
@@ -79,9 +89,9 @@ const LoginFunction = () => {
            
                 
                 
-                  <Button id="login_btn" type="submit"  variant="contained" color="primary" className="Button" >
+                  <button id="login_btn" type="submit"  variant="contained" color="primary" >
                    Login
-                  </Button>
+                  </button>
                 
               
             </div>
