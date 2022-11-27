@@ -13,6 +13,7 @@ function LoginPage(){
                     <LoginPicture/>
 
                 </Grid>
+                
                 <Grid item xs={10} sm={6}>
                     <LoginFunction id="loginFunction"/>
                 </Grid>

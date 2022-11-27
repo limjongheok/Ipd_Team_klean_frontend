@@ -84,6 +84,21 @@ export const signin = (userDTO) => {
 }
 
 
+export const postdumy = (dumytDto,d2) =>{
+  return axios.post("http://211.57.119.81:8080/change/temperature", dumytDto).then((resposne)=>{
+    console.log(resposne.status)
+   
+    
+  })
+}
+
+export const d2 = (d2, dum) =>{
+  return axios.post("http://211.57.119.81:8080/change/block", d2).then((response)=>{
+    console.log(response.status)
+    
+  })
+}
+
 
 
 export const signout = () => {
