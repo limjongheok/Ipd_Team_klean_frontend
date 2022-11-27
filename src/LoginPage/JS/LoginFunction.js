@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, TextField, Grid, Container, Typography, Checkbox} from "@material-ui/core"
+import { TextField, Grid, Container, Typography, Checkbox} from "@material-ui/core"
 import {signin} from "../../Api/ApiService";
 import "../CSS/LoginFunction.css"
 
@@ -71,7 +71,7 @@ const LoginFunction = () => {
               />
             </Grid>
             <div className="LoginState">
-                  <Checkbox defaultChecked  size="small"  color="default" />
+                  <Checkbox  checked size="small"  color="default" />
                   <p className="LoginStatefont">로그인 상태유지</p>
 
             </div>
@@ -79,9 +79,9 @@ const LoginFunction = () => {
            
                 
                 
-                  <Button id="login_btn" type="submit"  variant="contained" color="primary" className="Button" >
+                  <button id="login_btn" type="submit"  variant="contained" color="primary" className="Button" >
                    Login
-                  </Button>
+                  </button>
                 
               
             </div>
