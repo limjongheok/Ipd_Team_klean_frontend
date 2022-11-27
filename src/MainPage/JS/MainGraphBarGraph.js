@@ -33,6 +33,7 @@ function MainGraphBarGraph(){
                             막힌 횟수
                 </div>
                 
+                
             </div>
         </div>
     )
