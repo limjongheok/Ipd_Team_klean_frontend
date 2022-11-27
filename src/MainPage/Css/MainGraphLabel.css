@@ -1,0 +1,14 @@
+.MainGraphLabel{
+    text-align: center;
+}
+.MainGraphLabelYear{
+    color: rgb(179, 179, 179);
+    font-size: 1.8rem;
+    margin-bottom: 0.7rem;
+}
+.MainGraphLabelContent{
+    font-size: 1.3rem;
+    font-weight: bolder;
+    margin: 0;
+    letter-spacing: -0.2rem;
+}

@@ -1,0 +1,16 @@
+.MainGraphLineGraph{
+    text-align: center;
+}
+
+    
+    
+.MainGraphLineGraphContent{
+    width: 7rem;
+    height: 1.5rem;
+    display: inline-block;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(67,121,247);
+    color: #ffff;
+}
+

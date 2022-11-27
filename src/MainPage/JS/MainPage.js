@@ -1,17 +1,30 @@
 
-import {signout} from "../../Api/ApiService"
+import { Grid } from "@material-ui/core";
 import MainGraph from "./MainGraph";
-
+import MainList from "./MainList";
+import MainHeader from "./MainHeader"
+import "../CSS/MainPage.css"
 
 
 function MainPage(){
     
 
     return(
-        <div>
-            <h1>퍼센트 차트네염</h1>
-            <MainGraph/>
-            <button id="logoutbtn" onClick={signout}>로그아웃</button>
+        <div id = "MainPage">
+             
+            <Grid container >
+                <Grid item sm={12} id = "MainHeader">
+                    <MainHeader/>
+                </Grid>
+                <Grid item sm={7} id="MainGraph">
+                    <MainGraph/>
+                </Grid>
+                <Grid item sm={5} id= "MainList">
+                    <MainList/>
+                </Grid>
+
+            </Grid>
+            
             
         
         </div>
