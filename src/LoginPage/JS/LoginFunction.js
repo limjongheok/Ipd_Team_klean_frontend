@@ -1,12 +1,21 @@
 import React from "react";
-import { TextField, Grid, Container, Typography, Checkbox} from "@material-ui/core"
+import { TextField, Grid, Container, Typography, Checkbox ,makeStyles  } from "@material-ui/core"
+
+
 import {signin} from "../../Api/ApiService";
 import "../CSS/LoginFunction.css"
 
 
-
+const useStyles = makeStyles((theme) => ({
+  input: {
+    background: "#f3f3f3",
+  },
+}));
 
 const LoginFunction = () => {
+    const classes = useStyles();
+
+  
   
   
 
@@ -44,6 +53,7 @@ const LoginFunction = () => {
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <TextField
+                inputProps={{ className: classes.input }}
                 variant="filled"
                 required
                 fullWidth
@@ -57,6 +67,7 @@ const LoginFunction = () => {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                inputProps={{ className: classes.input }}
                 variant="filled"
                 required
                 fullWidth
