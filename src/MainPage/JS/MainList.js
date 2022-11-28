@@ -1,5 +1,6 @@
 import React from "react";
 import "../CSS/MainList.css"
+import {signout} from '../../Api/ApiService'
 
 
 
@@ -7,6 +8,7 @@ import "../CSS/MainList.css"
 function MainList(){
     return (
         <div className="MainList">
+            <button id="logoutbtn" onClick={signout}>로그아웃</button>
 
         </div>
     )
