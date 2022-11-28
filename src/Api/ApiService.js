@@ -16,6 +16,7 @@ export const call = (api, method, request) => {
 
   if (accessToken && accessToken !== "") {
     headers.append("Authorization", accessToken);
+    console.log(accessToken)
 
     // axios 전역 변수 생성
     axios.defaults.headers.common['Authorization'] = "Bearer  " + accessToken;
@@ -105,5 +106,6 @@ export const signout = () => {
   localStorage.removeItem(ACCESS_TOKEN);
   window.location.href = "/";
 }
+
 
 

@@ -1,16 +1,96 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import ReactApexChart from "react-apexcharts"; 
 import "../CSS/MainGraphLineGraph.css";
 import { Grid } from "@material-ui/core";
-
+import axios from "axios";
+import {  useQuery } from '@tanstack/react-query'
 
 function MainGraphLineGraph(){
+
+    const[sNov, SetSNov] = useState(0);
+    const [scount, setSCount] = useState(0);
+
+    useEffect(()=>{
+      
+      
+      var instance = axios.create();
+      let headers = new Headers({
+        "Content-Type": "application/json",
+      })
+      
+      setTimeout(()=>{
+        setSCount(scount + 1);
+        console.log(scount)
+        console.log("smalluseeffect");
+        
+
+        },600000)
+      
+
+      const accessToken = localStorage.getItem("ACCESS_TOKEN");
+      if (accessToken && accessToken !== "") {
+        headers.append("Authorization", accessToken);
+        console.log(accessToken)
+    
+        // axios 전역 변수 생성
+        axios.defaults.headers.common['Authorization'] = "Bearer  " + accessToken;
+      }
+
+      instance.get("http://211.57.119.81:8080/small/11/sewer").then((response)=>{
+        SetSNov(response.data.smallCount)
+
+      })
+
+      
+
+        setSCount(0);
+
+
+
+    },[scount])
+
+
+
+    const fetchtempData = async () => {
+      let headers = new Headers({
+        "Content-Type": "application/json",
+      })
+
+      const accessToken = localStorage.getItem("ACCESS_TOKEN");
+      if (accessToken && accessToken !== "") {
+        headers.append("Authorization", accessToken);
+        //console.log(accessToken)
+    
+        // axios 전역 변수 생성
+        axios.defaults.headers.common['Authorization'] = "Bearer  " + accessToken;
+      }
+      const res = await axios.get('http://211.57.119.81:8080/small/11/sewer');
+      console.log(res)
+      return res.data;
+    }
+  
+
+    const queryfetch = useQuery(['small_query'], fetchtempData, {
+      onSuccess: (data)=> {
+        console.log(data)
+        console.log("smalluewquery");
+        SetSNov(data.smallCount)
+      },
+      
+     
+      
+    })
+    
+
+
+
+
 
     const data ={
         series: [{
             name: "악취횟수",
-            data: [100, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160]
+            data: [30, 40, 20, 10, 50, 70, 60, 80, 100, 32, sNov, 16]
         }],
         options: {
           chart: {
@@ -73,7 +153,7 @@ function MainGraphLineGraph(){
             
             <div className="MainGraphLineGraph">
                 <button className="MainGraphLineGraphContent">
-                            악취 횟수
+                            악취 
                 </button>
                 
             </div>
