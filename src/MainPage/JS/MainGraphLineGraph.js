@@ -2,6 +2,7 @@ import React from "react";
 
 import ReactApexChart from "react-apexcharts"; 
 import "../CSS/MainGraphLineGraph.css";
+import { Grid } from "@material-ui/core";
 
 
 function MainGraphLineGraph(){
@@ -13,7 +14,7 @@ function MainGraphLineGraph(){
         }],
         options: {
           chart: {
-            height: 350,
+            height: '10%', width: '100%',
             type: 'line',
             zoom: {
               enabled: false
@@ -36,6 +37,11 @@ function MainGraphLineGraph(){
               opacity: 0.5
             },
           },
+          fill: {
+          
+            colors: ['#f3f3f3'],
+            
+          },
           xaxis: {
             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep','Oct','Nov','Dec'],
           }
@@ -48,12 +54,27 @@ function MainGraphLineGraph(){
 
 
     return(
-        <div>
-            <ReactApexChart options={data.options} series={data.series} type="line" height={140} />
+        <div className="chart">
+          
+          <div className="topchartborder"></div>
+          <Grid container className="chartContainer">
+                <Grid item xs={1} sm={1} >
+                    
+
+                </Grid>
+                
+                <Grid item xs={10} sm={10}>
+                <ReactApexChart options={data.options} series={data.series} type="line" height={"100%"} width={"100%"} className="linechart" />
+                    
+                </Grid>
+                <Grid item xs={1} sm={1}></Grid>
+
+            </Grid>
+            
             <div className="MainGraphLineGraph">
-                <div className="MainGraphLineGraphContent">
-                            악취
-                </div>
+                <button className="MainGraphLineGraphContent">
+                            악취 횟수
+                </button>
                 
             </div>
         </div>

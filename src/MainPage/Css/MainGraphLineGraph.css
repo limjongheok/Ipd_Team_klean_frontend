@@ -5,12 +5,37 @@
     
     
 .MainGraphLineGraphContent{
-    width: 7rem;
-    height: 1.5rem;
+    width: 10rem;
+    height: 2.5rem;
     display: inline-block;
     text-align: center;
-    border-radius: 10px;
-    background-color: rgb(67,121,247);
+    border-radius: 20px;
+    font-size: 1.5rem;
+    background-color: #5a98f7;
     color: #ffff;
+    border: none;
+    margin-top: 0.5rem;
+    
 }
 
+.chart{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+   
+}
+.topchartborder{
+    width: 80%;
+    display: inline-block;
+    border-top: 3px solid rgb(232, 232, 232);
+    margin-bottom: 1rem;
+
+}
+.linechart{
+    width: 100%;
+    height: 80%;
+    display: inline-block;
+
+    
+    
+}
