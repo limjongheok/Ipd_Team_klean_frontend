@@ -106,6 +106,13 @@ export const signout = () => {
   localStorage.removeItem(ACCESS_TOKEN);
   window.location.href = "/";
 }
+export const barGraphGet = () =>{
+  return call("/block/11/sewer","")
+} 
+
+export const lineGraphGet = () => {
+  return call("/small/11/sewer","")
+}
 
 
 

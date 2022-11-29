@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-
 import ReactApexChart from "react-apexcharts"; 
 import "../CSS/MainGraphLineGraph.css";
 import { Grid } from "@material-ui/core";
 import axios from "axios";
 import {  useQuery } from '@tanstack/react-query'
+import {lineGraphGet} from '../../Api/ApiService'
 
 function MainGraphLineGraph(){
 
@@ -14,37 +14,23 @@ function MainGraphLineGraph(){
     useEffect(()=>{
       
       
-      var instance = axios.create();
-      let headers = new Headers({
-        "Content-Type": "application/json",
-      })
-      
       setTimeout(()=>{
         setSCount(scount + 1);
         console.log(scount)
         console.log("smalluseeffect");
         
 
-        },600000)
+        },5000)
+
+        lineGraphGet().then((res)=>{
+          SetSNov(res.data.smallCount);
+        })
       
 
-      const accessToken = localStorage.getItem("ACCESS_TOKEN");
-      if (accessToken && accessToken !== "") {
-        headers.append("Authorization", accessToken);
-        console.log(accessToken)
-    
-        // axios 전역 변수 생성
-        axios.defaults.headers.common['Authorization'] = "Bearer  " + accessToken;
-      }
-
-      instance.get("http://211.57.119.81:8080/small/11/sewer").then((response)=>{
-        SetSNov(response.data.smallCount)
-
-      })
-
+      
       
 
-        setSCount(0);
+       
 
 
 
@@ -52,7 +38,7 @@ function MainGraphLineGraph(){
 
 
 
-    const fetchtempData = async () => {
+    const fetchsmallData = async () => {
       let headers = new Headers({
         "Content-Type": "application/json",
       })
@@ -71,7 +57,7 @@ function MainGraphLineGraph(){
     }
   
 
-    const queryfetch = useQuery(['small_query'], fetchtempData, {
+    const queryfetch = useQuery(['small_query'], fetchsmallData, {
       onSuccess: (data)=> {
         console.log(data)
         console.log("smalluewquery");
@@ -90,7 +76,7 @@ function MainGraphLineGraph(){
     const data ={
         series: [{
             name: "악취횟수",
-            data: [30, 40, 20, 10, 50, 70, 60, 80, 100, 32, sNov, 16]
+            data: [1, 4, 2, 3, 5, 7, 6, 9, 1, 3, sNov, 2]
         }],
         options: {
           chart: {

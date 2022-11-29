@@ -3,8 +3,8 @@ import ReactApexChart from "react-apexcharts";
 import "../CSS/MainGraphBarGraph.css";
 import { Grid } from "@material-ui/core";
 import {  useQuery } from '@tanstack/react-query'
-
 import axios from "axios";
+import {barGraphGet} from '../../Api/ApiService'
 
 
 function MainGraphBarGraph(){
@@ -14,40 +14,21 @@ function MainGraphBarGraph(){
     useEffect(()=>{
     
       
-      var instance = axios.create();
-      let headers = new Headers({
-        "Content-Type": "application/json",
-      })
+     
       setTimeout(()=>{
         setCount(count + 1);
         console.log(count)
         console.log("blockueseffect");
 
-        },600000)
+        },5000)
+        barGraphGet().then((res)=>{
+          SetNov(res.data.blockCount)
+        })
 
-      
-
-      const accessToken = localStorage.getItem("ACCESS_TOKEN");
-      if (accessToken && accessToken !== "") {
-        headers.append("Authorization", accessToken);
-        console.log(accessToken)
-    
-        // axios 전역 변수 생성
-        axios.defaults.headers.common['Authorization'] = "Bearer  " + accessToken;
+      if(count === 10000){
+        setCount(0)
       }
-
-      instance.get("http://211.57.119.81:8080/block/11/sewer").then((response)=>{
-        console.log(response.data.blockCount)
-        SetNov(response.data.blockCount)
-
-      })
-
       
-        setCount(0);
-
-
-
-
     },[count])
     // useEffect(()=>{
     //   setTimeout(()=>{
@@ -56,7 +37,7 @@ function MainGraphBarGraph(){
      
     // })
 
-    const fetchtempData = async () => {
+    const fetchblockData = async () => {
       let headers = new Headers({
         "Content-Type": "application/json",
       })
@@ -75,7 +56,7 @@ function MainGraphBarGraph(){
     }
   
 
-    const queryfetch = useQuery(['block_query'], fetchtempData, {
+    const queryfetch = useQuery(['block_query'], fetchblockData, {
       onSuccess: (data)=> {
         console.log(data)
         console.log("blockusequerry")
@@ -91,7 +72,7 @@ function MainGraphBarGraph(){
           
       series: [{
         name: '막힌 횟수',
-        data: [10, 15, 8, 20, 5, 21, 2, 22, 7, 3, Nov, 10]
+        data: [10,7, 8, 13, 5, 11, 2, 12, 7, 3, Nov, 10]
       }],
       options: {
         chart: {
