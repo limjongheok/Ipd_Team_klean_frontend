@@ -20,10 +20,11 @@ function MainGraphBarGraph(){
         console.log(count)
         console.log("blockueseffect");
 
-        },5000)
+        },500000000)
         barGraphGet().then((res)=>{
           SetNov(res.data.blockCount)
         })
+      
 
       if(count === 10000){
         setCount(0)

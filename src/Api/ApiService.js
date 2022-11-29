@@ -38,7 +38,7 @@ export const call = (api, method, request) => {
      {
       console.log(response)
       if(response.status === 200){ // 200 이면 응답 
-        console.log("true")
+       
         return response
       }
       }).catch((error)=>{

@@ -6,6 +6,8 @@ import MainHeader from "./MainHeader"
 import "../CSS/MainPage.css"
 
 
+
+
 function MainPage(){
     
 
@@ -14,7 +16,10 @@ function MainPage(){
              
             <Grid container >
                 <Grid item sm={12} id = "MainHeader">
-                    <MainHeader/>
+                    
+                        <MainHeader />
+                
+                    
                 </Grid>
                 <Grid item sm={7} id="MainGraph">
                     <MainGraph/>
