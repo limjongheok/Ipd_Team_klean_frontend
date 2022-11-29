@@ -21,7 +21,7 @@ function MainPage(){
                 
                     
                 </Grid>
-                <Grid item sm={7} id="MainGraph">
+                <Grid item sm={7} id="MainGraph" >
                     <MainGraph/>
                 </Grid>
                 <Grid item sm={5} id= "MainList">
