@@ -4,7 +4,7 @@ import axios from "axios";
 export const useInfiniteScrollQery = () =>{
     const getPageBoard =async ({pageParam = 0}) => {
         const res = await axios.get(
-            `http://211.57.119.81:8080/active/sewer/list?page=${pageParam}&size=8`
+            `http://211.57.119.81:8080/active/sewer/list?page=${pageParam}&size=7`
         )
 
         return{
