@@ -133,6 +133,7 @@ function MainGraphBarGraph(){
                 <Grid item xs={1} sm={1}></Grid>
 
             </Grid>
+            
           
             <div className="MainGraphBarGraph">
                 <button className="MainGraphBarGraphContent">

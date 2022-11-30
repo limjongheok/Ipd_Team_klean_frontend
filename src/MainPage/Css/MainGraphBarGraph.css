@@ -37,3 +37,50 @@
     border-bottom: 3px solid rgb(232, 232, 232);
     margin-top: 0.3rem;
 }
+@media  screen and (max-width:1250px) {
+    .MainGraphBarGraph{
+        text-align: center;
+    }
+    
+        
+        
+    .MainGraphBarGraphContent{
+        width: 8rem;
+        height: 2rem;
+        display: inline-block;
+        text-align: center;
+        border-radius: 20px;
+        font-size: 1rem;
+        background-color:#249ffb;
+        color: #ffff;
+        border: none;
+        margin-top: 0.5rem;
+    }
+    .chartContainer{
+        height: 80%;
+        
+    }
+    .chart{
+        height: 98%;
+        width: 100%;
+        text-align: center;
+    }
+    .barchart{
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        
+    }
+    .bottomchartborder{
+        width: 80%;
+        display: inline-block;
+        border-bottom: 3px solid rgb(232, 232, 232);
+        margin-top: 0.3rem;
+    }
+    
+
+
+    
+
+    
+}

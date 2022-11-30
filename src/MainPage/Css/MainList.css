@@ -76,3 +76,83 @@
 
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable.css");
+
+
+@media  screen and (max-width:1250px) {
+   
+    
+    .MainListbuttonflex{
+        height: 15%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 3px solid rgb(232, 232, 232);
+        margin-bottom: 1%;
+        margin-top: 1rem;
+      
+        
+    }
+    
+    .Main_listbutton{
+        margin-top: 2%;
+        width: 9rem;
+        height: 2rem;
+        display: inline-block;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 1rem;
+        background-color:#249ffb;
+        color: #ffff;
+        border: none;
+        margin-bottom: 1%;
+        font-family: Pretendard Variable;
+    }
+    
+    .MainDummySpace{
+        margin-bottom: 4%;
+    }
+    .MainListwrapper{
+        display: inline-block;
+      
+        width: 100%;
+        height: 81%;
+        overflow: auto;
+       
+     
+        
+    }
+    
+    
+    #cardDiv{
+        height: 10%;
+        width: 100%;
+        margin-top: 2%;
+        margin-bottom: 4%;
+        text-align: center;
+        z-index: 0;
+    }
+    .card{
+        width: 60%;
+        height: 100%;
+        display: inline-block;
+    }
+    .cardLast{
+        height: 60%;
+    }
+    .CardButton{
+        height: 100%;
+        width: 100%;
+        border: none;
+        background-color: rgb(246, 247, 251 );;
+        font-family: Pretendard Variable;
+        font-size: 1em;
+    }
+    
+    
+
+    
+
+    
+}

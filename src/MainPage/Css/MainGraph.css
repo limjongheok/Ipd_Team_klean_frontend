@@ -25,3 +25,40 @@
     height: 100%;
     background-color: rgb(246, 247, 251 );
 }
+
+
+@media  screen and (max-width:1250px) {
+    #container{
+        height: 100%;
+    }
+    
+    #MainGraphLabel{
+        height: 15%;
+        width: 100%;
+        
+    
+    }
+    #MainGraphLineGraph{
+        height:35% ;
+        width: 100%;
+    
+    }
+    
+    #MainGraphBarGraph{
+        height: 49%;
+        width: 100%;
+        
+    }
+    
+    
+    .MainGraph{
+        height: 100%;
+        background-color: white;
+    }
+    
+
+
+    
+
+    
+}
