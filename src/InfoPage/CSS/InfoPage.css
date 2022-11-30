@@ -1,0 +1,53 @@
+#InfoPage{
+    height: 100vh;
+    width: 100%;
+}
+
+
+#InfoGraph{
+    height: 91vh;
+    background-color: rgb(246, 247, 251 );
+}
+
+#InfoInfo{
+    height: 91vh;
+    width: 100%;
+    
+}
+
+#InfoHeader{
+    height: 9vh;
+}
+
+
+
+
+
+@media  screen and (max-width:1250px) {
+    #InfoPage{
+        height: 100vh;
+        width: 100%;
+        background-color: white;
+    }
+    
+    #InfoGraph{
+        height: 90vh;
+        background-color: white;
+    }
+    
+    #InfoInfo{
+        height: 90vh;
+        width: 100%;
+        
+    }
+    
+    #InfoHeader{
+        height: 8vh;
+    }
+    
+    
+
+    
+
+    
+}

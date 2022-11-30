@@ -119,3 +119,11 @@ export const activeSewerSizeGet = () =>{
 }
 
 
+export const sewerInfoBlock = (id) => {
+  return call(`/sewer/info/block/${id}`)
+}
+export const sewerInfoSmall = (id) => {
+  return call(`/sewer/info/small/${id}`)
+}
+
+
