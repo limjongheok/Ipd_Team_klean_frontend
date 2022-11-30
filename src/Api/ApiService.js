@@ -16,7 +16,7 @@ export const call = (api, method, request) => {
 
   if (accessToken && accessToken !== "") {
     headers.append("Authorization", accessToken);
-    console.log(accessToken)
+    //console.log(accessToken)
 
     // axios 전역 변수 생성
     axios.defaults.headers.common['Authorization'] = "Bearer  " + accessToken;
@@ -114,5 +114,8 @@ export const lineGraphGet = () => {
   return call("/small/11/sewer","")
 }
 
+export const activeSewerSizeGet = () =>{
+  return call("/active/sewer", "")
+}
 
 

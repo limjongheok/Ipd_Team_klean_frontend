@@ -20,20 +20,17 @@ function MainGraphLineGraph(){
         console.log("smalluseeffect");
         
 
-        },5000)
+        },4000)
 
         lineGraphGet().then((res)=>{
           SetSNov(res.data.smallCount);
         })
+
+
+        if(scount === 10000){
+          setSCount(0)
+        }
       
-
-      
-      
-
-       
-
-
-
     },[scount])
 
 

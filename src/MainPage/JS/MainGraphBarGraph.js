@@ -20,7 +20,7 @@ function MainGraphBarGraph(){
         console.log(count)
         console.log("blockueseffect");
 
-        },5000)
+        },4000)
         barGraphGet().then((res)=>{
           SetNov(res.data.blockCount)
         })
@@ -31,12 +31,7 @@ function MainGraphBarGraph(){
       }
       
     },[count])
-    // useEffect(()=>{
-    //   setTimeout(()=>{
-
-    //   },1000)
-     
-    // })
+    
 
     const fetchblockData = async () => {
       let headers = new Headers({

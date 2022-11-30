@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../CSS/MainList.css"
 
 import {useInfiniteScrollQery} from "./UseInfiniteScrollerQuery"
 import { useInView } from "react-intersection-observer";
 import { Card } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
-
+import {activeSewerSizeGet} from '../../Api/ApiService'
 
 
 
@@ -13,11 +13,16 @@ import { Grid } from "@material-ui/core";
 function MainList(){
     const { getBoard, getNextPage, getBoardIsSuccess, getNextPageIsPossible } = useInfiniteScrollQery();
     const [ref, isView] = useInView();
+    const [ActiveSewerSize, SetActiveSewerSize] = useState(0);
+    const[PrevActiveSewerSize, SetPrevActiveSewerSize] = useState(0);
+    const [count, setCount] = useState(0);
     console.log(getBoard)
     function showInfo(id){
         window.location.href = `/info/${id}`
     }
-    
+    // 처음 렌더링 
+
+
     useEffect(() => {
         // 맨 마지막 요소를 보고있고 더이상 페이지가 존재하면
         // 다음 페이지 데이터를 가져옴
@@ -26,6 +31,51 @@ function MainList(){
         }
         console.log(1)
       }, [isView, getBoard]);
+
+     
+
+      useEffect(()=>{
+        setTimeout(()=>{
+            setCount(count + 1);
+            console.log(count)
+            console.log("blockueseffect");
+    
+            },5000)
+            
+
+            activeSewerSizeGet().then((res)=>{
+                SetActiveSewerSize(res.data.activeSewerListSize);
+            })
+            // 만약 이전 상태와 현재 상태가 같지 않다면
+            if(PrevActiveSewerSize !== ActiveSewerSize){
+
+                if(PrevActiveSewerSize <ActiveSewerSize){
+                    if(PrevActiveSewerSize === 0){
+                        //alert("활성된 상태의 하수구가 있습니다.")
+                        if(ActiveSewerSize === 1){
+                            alert("활성된 상태의 하수구가 추가되었습니다.")
+                            SetPrevActiveSewerSize(ActiveSewerSize);
+                        }else{
+                            SetPrevActiveSewerSize(ActiveSewerSize);
+                        }
+                    }else{
+                        alert("활성된 상태의 하수구가 추가되었습니다.")
+                        SetPrevActiveSewerSize(ActiveSewerSize);
+
+                    }
+                    
+                }
+                else{
+                    SetPrevActiveSewerSize(ActiveSewerSize);
+                }                
+            }
+            if(count === 10000){
+                setCount(0)
+              }
+              console.log(PrevActiveSewerSize)
+              console.log(ActiveSewerSize)
+
+      },[count])
 
 
    
