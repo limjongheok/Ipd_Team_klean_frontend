@@ -1,21 +1,21 @@
-.MainGraphLabel{
+.InfoGraphLabel{
     width: 100%;
     height: 100%;
     text-align: center;
     margin-bottom: 10px;
 }
-.MainGraphLabelYear{
+.InfoGraphLabelYear{
     width: 100%;
     height: 50%;
     color: rgb(179, 179, 179);
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-top: 1rem;
     margin-bottom: 0.4rem;
 }
-.MainGraphLabelContent{
+.InfoGraphLabelContent{
     width: 100%;
     height: 50%;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: bolder;
     margin: 0;
     letter-spacing: -0.1rem;

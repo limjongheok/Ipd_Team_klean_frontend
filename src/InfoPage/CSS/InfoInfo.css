@@ -1,0 +1,142 @@
+#InfoContainer{
+    height: 100%;
+}
+
+#Info1{
+    height: 20%;
+    width: 100%;
+   
+    
+
+}
+#InfoButton{
+    width: 100%;
+    height: 100%;
+}
+.buttonDiv{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.Button{
+    border-radius: 15px;
+    font-size: 1rem;
+    background-color:#249ffb;
+    color: #ffff;
+    border: none;
+    width: 11rem;
+    height: 2.5rem;
+}
+#InfoMain{
+    height:77% ;
+    width: 100%;
+    
+
+}
+
+
+#InfoMain1{
+    width: 100%;
+    height: 100%;
+    
+}
+#InfoMain3{
+    width: 100%;
+    height: 100%;
+    
+    
+}
+#InfoMainContent{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(246, 247, 251 );
+    
+}
+
+#InfoMainheader{
+    width: 100%;
+    height: 15%;
+}
+
+
+#InfoMainContainer{
+    width: 100%;
+    height: 100%;
+    
+    
+}
+.InfoMainHeaderContent{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 0.011rem;
+    color: rgb(152, 152, 152);
+    
+    border-bottom: rgb(232, 232, 232) 3px solid;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+#InfoMainContentContainer{
+    width: 100%;
+    height: 85%;
+   
+}
+#InfoMainContents{
+    width: 100%;
+    height: 33%;
+    
+}
+#Contents{
+    width: 100%;
+    height: 100%;
+    
+
+}
+#Contentgrid{
+    width: 100%;
+    height: 100%;
+}
+.Contentdiv{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    color: black;
+    opacity: 0.5;
+    font-weight: bold;
+
+}
+.Contentdiv2{
+    text-align: center;
+    color: black;
+    opacity: 0.5;
+    font-weight: bold;
+    margin: 0;
+}
+#contentp1{
+    margin: 0.5rem;
+    font-size: 1rem;
+   
+}
+
+#contentp2{
+    
+    font-size: 0.6rem;
+}
+.Contentdiv3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+#contentp1e{
+    margin: 0.5rem;
+    font-size: 0.85rem;
+
+}

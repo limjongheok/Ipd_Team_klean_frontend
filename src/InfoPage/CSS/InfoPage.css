@@ -1,3 +1,8 @@
+
+#container{
+    width: 100%;
+    height: 100%;
+}
 #InfoPage{
     height: 100vh;
     width: 100%;
@@ -17,37 +22,10 @@
 
 #InfoHeader{
     height: 9vh;
+    width: 100%;
 }
 
 
 
 
 
-@media  screen and (max-width:1250px) {
-    #InfoPage{
-        height: 100vh;
-        width: 100%;
-        background-color: white;
-    }
-    
-    #InfoGraph{
-        height: 90vh;
-        background-color: white;
-    }
-    
-    #InfoInfo{
-        height: 90vh;
-        width: 100%;
-        
-    }
-    
-    #InfoHeader{
-        height: 8vh;
-    }
-    
-    
-
-    
-
-    
-}
