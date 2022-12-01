@@ -24,13 +24,13 @@ function InfoInfo(){
     const[InfoState, SetInfoState] = useState();
     const[InfoLatitude, SetInfoLatitude] = useState();
     const[InfoLongtitude, SetInfoLongtitude] = useState();
-    const[MyLatitude, SetMyLatitude] = useState();
-    const[MyLongtitude, SetMyLongtitude] = useState();
+    const[MyLatitude, SetMyLatitude] = useState(0);
+    const[MyLongtitude, SetMyLongtitude] = useState(0);
     
 
 
     function ShowMap(){
-        window.open(`https://www.google.co.kr/maps/dir/${MyLatitude},${MyLongtitude}/${InfoLatitude},${InfoLongtitude}`)
+        window.open(`https://map.kakao.com/link/search/${InfoLatitude},${InfoLongtitude}`)
 
     }
 
@@ -79,32 +79,23 @@ function InfoInfo(){
         
       })
 
-      useEffect(()=>{
-        console.log(1231231)
+      useEffect(() => {
         if (navigator.geolocation) {
-    
-            // GeoLocation을 이용해서 접속 위치를 얻어옵니다
-            navigator.geolocation.getCurrentPosition(function(position) {
-                
-                var lat = position.coords.latitude; // 위도
-                var lon = position.coords.longitude; // 경도
-                SetMyLatitude(lat)
-                SetMyLongtitude(lon)
-                console.log(lat)
-                
-
-
-
-                
-                
-                    
-              });
-            
-        } else { 
-               alert("현재 위치를 찾을 수 없습니다.")
+          // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+                SetMyLatitude(position.coords.latitude)
+                SetMyLongtitude(position.coords.longitude)
+                console.log(position.coords.latitude)
+              
+            }
+          )
+        } else {
+          // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+          alert("위치를 찾을 수 없어요 ")
         }
-
-      },[MyLatitude, MyLongtitude])
+        console.log(MyLatitude)
+      }, )
 
 
 
