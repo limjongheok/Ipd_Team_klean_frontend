@@ -80,6 +80,7 @@ function InfoInfo(){
       })
 
       useEffect(()=>{
+        console.log(1231231)
         if (navigator.geolocation) {
     
             // GeoLocation을 이용해서 접속 위치를 얻어옵니다
@@ -89,6 +90,9 @@ function InfoInfo(){
                 var lon = position.coords.longitude; // 경도
                 SetMyLatitude(lat)
                 SetMyLongtitude(lon)
+                console.log(lat)
+                
+
 
 
                 
@@ -100,7 +104,7 @@ function InfoInfo(){
                alert("현재 위치를 찾을 수 없습니다.")
         }
 
-      },[])
+      },[MyLatitude, MyLongtitude])
 
 
 
@@ -108,9 +112,9 @@ function InfoInfo(){
         <Grid container id= "InfoContainer" >
             <Grid item xs={12} sm={12} id="Info1">
                 <Grid container id="InfoButton">
-                    <Grid xs={1} sm={1}></Grid>
-                    <Grid xs={10} sm={10}><div className="buttonDiv"><button className="Button" onClick={()=>ShowMap()}>해당 지도로 바로가기</button></div></Grid>
-                    <Grid xs={1} sm={1}></Grid>
+                    <Grid item xs={1} sm={1}></Grid>
+                    <Grid item xs={10} sm={10}><div className="buttonDiv"><button className="Button" onClick={()=>ShowMap()}>해당 지도로 바로가기</button></div></Grid>
+                    <Grid item xs={1} sm={1}></Grid>
                 </Grid>
                 
             </Grid>
