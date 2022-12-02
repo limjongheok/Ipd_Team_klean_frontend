@@ -26,6 +26,9 @@ function InfoInfo(){
     const[InfoLongtitude, SetInfoLongtitude] = useState();
     const[MyLatitude, SetMyLatitude] = useState(0);
     const[MyLongtitude, SetMyLongtitude] = useState(0);
+    const[InfoBatteryValue, SetInfoBatteryValue] = useState();
+    const[InfoBatteryDate, SetInfoBatteryDate] = useState();
+    const[InfoBatteryTime, SetInfoBatteryTime] = useState();
     
 
 
@@ -73,6 +76,9 @@ function InfoInfo(){
             SetInfoState(data.state);
             SetInfoLatitude(data.latitude);
             SetInfoLongtitude(data.longtitude);
+            SetInfoBatteryValue(data.batteryValue);
+            SetInfoBatteryDate(data.batteryDate);
+            SetInfoBatteryTime(data.batteryTime);
         },
         
        
@@ -142,7 +148,7 @@ function InfoInfo(){
                             <Grid item xs={12} xm={12} id="InfoMainContents">
                                 <Grid container id="Contents">
                                     <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv"><p>쓰레기 쌓임 :  {InfoBlockValue}</p></div></Grid>
-                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv2"><div className="Contentdiv3"> <p id="contentp1e">현재 우수관 상태 : </p><p id="contentp2">{InfoState}</p></div ></div></Grid>
+                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv2"><div className="Contentdiv3"> <p id="contentp1e">베터리: </p><p id="contentp2">{InfoBatteryValue}</p></div ></div></Grid>
                                 </Grid>
                             </Grid>
 

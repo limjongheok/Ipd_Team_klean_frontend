@@ -10,6 +10,7 @@ function InfoGraph(){
      const[state, setState] = useState(0);
      
      function BlockButton(){
+        
         setState(0)
      }
      function SmallButton(){

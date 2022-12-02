@@ -46,7 +46,7 @@ function MainGraphBarGraph(){
         // axios 전역 변수 생성
         axios.defaults.headers.common['Authorization'] = "Bearer  " + accessToken;
       }
-      const res = await axios.get('http://211.57.119.81:8080/block/11/sewer');
+      const res = await axios.get('http://211.57.119.81:8080/block/12/sewer');
       console.log(res)
       return res.data;
     }
@@ -68,7 +68,7 @@ function MainGraphBarGraph(){
           
       series: [{
         name: '막힌 횟수',
-        data: [10,7, 8, 13, 5, 11, 2, 12, 7, 3, Nov, 10]
+        data: [10,7, 8, 13, 5, 11, 2, 12, 7, 3, 10, Nov]
       }],
       options: {
         chart: {

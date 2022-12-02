@@ -26,8 +26,8 @@ function InfoGraphSmall(){
             },4000)
 
         sewerInfoSmall(params.id).then((res)=>{
-            console.log(res.data.nov_Count)
-            SetSamllDev(res.data.nov_Count);
+            console.log(res.data.dec_Count)
+            SetSamllDev(res.data.dec_Count);
         })
 
 

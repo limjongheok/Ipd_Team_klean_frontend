@@ -48,7 +48,7 @@ function MainGraphLineGraph(){
         // axios 전역 변수 생성
         axios.defaults.headers.common['Authorization'] = "Bearer  " + accessToken;
       }
-      const res = await axios.get('http://211.57.119.81:8080/small/11/sewer');
+      const res = await axios.get('http://211.57.119.81:8080/small/12/sewer');
       console.log(res)
       return res.data;
     }
@@ -73,7 +73,7 @@ function MainGraphLineGraph(){
     const data ={
         series: [{
             name: "악취횟수",
-            data: [1, 4, 2, 3, 5, 7, 6, 9, 1, 3, sNov, 2]
+            data: [1, 4, 2, 3, 5, 7, 6, 9, 1, 3, 2, sNov]
         }],
         options: {
           chart: {

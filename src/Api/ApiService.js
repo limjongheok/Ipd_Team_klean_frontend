@@ -107,11 +107,11 @@ export const signout = () => {
   window.location.href = "/";
 }
 export const barGraphGet = () =>{
-  return call("/block/11/sewer","")
+  return call("/block/12/sewer","")
 } 
 
 export const lineGraphGet = () => {
-  return call("/small/11/sewer","")
+  return call("/small/12/sewer","")
 }
 
 export const activeSewerSizeGet = () =>{

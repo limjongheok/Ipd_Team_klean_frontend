@@ -34,48 +34,48 @@ function MainList(){
 
      
 
-      useEffect(()=>{
-        setTimeout(()=>{
-            setCount(count + 1);
-            console.log(count)
-            console.log("blockueseffect");
+    //   useEffect(()=>{
+    //     setTimeout(()=>{
+    //         setCount(count + 1);
+    //         console.log(count)
+    //         console.log("blockueseffect");
     
-            },5000)
+    //         },5000)
             
 
-            activeSewerSizeGet().then((res)=>{
-                SetActiveSewerSize(res.data.activeSewerListSize);
-            })
-            // 만약 이전 상태와 현재 상태가 같지 않다면
-            if(PrevActiveSewerSize !== ActiveSewerSize){
+    //         activeSewerSizeGet().then((res)=>{
+    //             SetActiveSewerSize(res.data.activeSewerListSize);
+    //         })
+    //         // 만약 이전 상태와 현재 상태가 같지 않다면
+    //         if(PrevActiveSewerSize !== ActiveSewerSize){
 
-                if(PrevActiveSewerSize <ActiveSewerSize){
-                    if(PrevActiveSewerSize === 0){
-                        //alert("활성된 상태의 하수구가 있습니다.")
-                        if(ActiveSewerSize === 1){
-                            alert("활성된 상태의 하수구가 추가되었습니다.")
-                            SetPrevActiveSewerSize(ActiveSewerSize);
-                        }else{
-                            SetPrevActiveSewerSize(ActiveSewerSize);
-                        }
-                    }else{
-                        alert("활성된 상태의 하수구가 추가되었습니다.")
-                        SetPrevActiveSewerSize(ActiveSewerSize);
+    //             if(PrevActiveSewerSize <ActiveSewerSize){
+    //                 if(PrevActiveSewerSize === 0){
+    //                     //alert("활성된 상태의 하수구가 있습니다.")
+    //                     if(ActiveSewerSize === 1){
+    //                         alert("활성된 상태의 하수구가 추가되었습니다.")
+    //                         SetPrevActiveSewerSize(ActiveSewerSize);
+    //                     }else{
+    //                         SetPrevActiveSewerSize(ActiveSewerSize);
+    //                     }
+    //                 }else{
+    //                     alert("활성된 상태의 하수구가 추가되었습니다.")
+    //                     SetPrevActiveSewerSize(ActiveSewerSize);
 
-                    }
+    //                 }
                     
-                }
-                else{
-                    SetPrevActiveSewerSize(ActiveSewerSize);
-                }                
-            }
-            if(count === 10000){
-                setCount(0)
-              }
-              console.log(PrevActiveSewerSize)
-              console.log(ActiveSewerSize)
+    //             }
+    //             else{
+    //                 SetPrevActiveSewerSize(ActiveSewerSize);
+    //             }                
+    //         }
+    //         if(count === 10000){
+    //             setCount(0)
+    //           }
+    //           console.log(PrevActiveSewerSize)
+    //           console.log(ActiveSewerSize)
 
-      },[count])
+    //   },[count])
 
 
    
