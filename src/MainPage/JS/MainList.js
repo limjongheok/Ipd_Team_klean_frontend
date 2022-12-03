@@ -82,6 +82,9 @@ function MainList(){
             alert("활성화 하수구가 추가 되었습니다.")
 
         }
+        if(count2 === 10000){
+            setCount2(0)
+          }
 
       },[count2])
 
@@ -104,7 +107,9 @@ function MainList(){
             })
             // 만약 이전 상태와 현재 상태가 같지 않다면
            
-            
+            if(count === 10000){
+                setCount(0)
+              }
            
 
       },[count])
