@@ -16,8 +16,8 @@ function MainGraphLineGraph(){
       
       setTimeout(()=>{
         setSCount(scount + 1);
-        console.log(scount)
-        console.log("smalluseeffect");
+       // console.log(scount)
+        //console.log("smalluseeffect");
         
 
         },4000)
@@ -49,15 +49,15 @@ function MainGraphLineGraph(){
         axios.defaults.headers.common['Authorization'] = "Bearer  " + accessToken;
       }
       const res = await axios.get('http://211.57.119.81:8080/small/12/sewer');
-      console.log(res)
+      //console.log(res)
       return res.data;
     }
   
 
     const queryfetch = useQuery(['small_query'], fetchsmallData, {
       onSuccess: (data)=> {
-        console.log(data)
-        console.log("smalluewquery");
+        //console.log(data)
+        //console.log("smalluewquery");
         SetSNov(data.smallCount)
       },
       

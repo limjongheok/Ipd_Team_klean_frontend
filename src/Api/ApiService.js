@@ -36,14 +36,14 @@ export const call = (api, method, request) => {
   return axios(options.url, options)
     .then((response) =>
      {
-      console.log(response)
+      //console.log(response)
       if(response.status === 200){ // 200 이면 응답 
        
         return response
       }
       }).catch((error)=>{
-        console.log(error.response)
-        console.log(error.response.status)
+       // console.log(error.response)
+        //console.log(error.response.status)
         let errorresponse = error.response.status;
         
         if(errorresponse === 403){ // 계정이 존재하지 않을시 

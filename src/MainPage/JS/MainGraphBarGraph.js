@@ -17,8 +17,8 @@ function MainGraphBarGraph(){
      
       setTimeout(()=>{
         setCount(count + 1);
-        console.log(count)
-        console.log("blockueseffect");
+       // console.log(count)
+        //console.log("blockueseffect");
 
         },4000)
         barGraphGet().then((res)=>{
@@ -47,15 +47,15 @@ function MainGraphBarGraph(){
         axios.defaults.headers.common['Authorization'] = "Bearer  " + accessToken;
       }
       const res = await axios.get('http://211.57.119.81:8080/block/12/sewer');
-      console.log(res)
+      //console.log(res)
       return res.data;
     }
   
 
     const queryfetch = useQuery(['block_query'], fetchblockData, {
       onSuccess: (data)=> {
-        console.log(data)
-        console.log("blockusequerry")
+        //console.log(data)
+        //console.log("blockusequerry")
         SetNov(data.blockCount)
       },
       

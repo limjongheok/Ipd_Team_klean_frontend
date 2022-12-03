@@ -1,6 +1,110 @@
 .MainHeader{
     height: 100%;
-    width: 100%;
+    width: 100%;  
+    background-color: rgb(90, 138, 239); 
+}
+#MainHeaderGridContainer{
+    height: 100%;
+    width: 100%;   
+
+}
+#MainHeaderGrid1{
     
+    height: 100%;
+}
+#MainHeaderGrid2{
+    
+    height: 100%;
+}
+#MainHeaderGrid3{
+  
+    height: 100%;
+}
+.MainHeaderGrid1div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Gomainbutton{
+    height: 100%;
+    width: 100%;  
+    background-color: rgb(90, 138, 239); 
+    border: none;
+
+}
+.icon{
+    width: 100%;
+    height: 100%;
+    margin-right: 0.4rem;
+}
+
+
+#MainHeaderGG{
+    width: 100%;
+    height: 100%;
+}
+
+#MainHeaderGG1{
+    width: 100%;
+    height: 100%;
    
 }
+
+
+.MainHeaderGrid2div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-family: Pretendard Variable;
+    font-weight: 300;
+
+}
+.LogoutButton{
+    color: #ffffff;
+    background-color: rgb(90, 138, 239); 
+    border: none;
+    font-size: 0.8rem;
+    font-family: Pretendard Variable;
+    font-weight: 300;
+}
+#MainHeaderGIcon{
+    width: 100%;
+    height: 100%;
+
+}
+#MainHeaderGI1{
+    width: 100%;
+    height: 100%;
+
+}
+#MainHeaderGI2{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(37, 79, 191);
+
+}
+.MainHeaderGridI{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerIcon{
+    width: 40%;
+    height: 40%;
+}
+
+.mainHamberger{
+    height: 100%;
+    
+    background-color: blue
+}
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable.css");

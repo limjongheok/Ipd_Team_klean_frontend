@@ -3,7 +3,7 @@ import "../CSS/MainList.css"
 
 import {useInfiniteScrollQery} from "./UseInfiniteScrollerQuery"
 import { useInView } from "react-intersection-observer";
-import { Card } from "@material-ui/core";
+import { Card, useRadioGroup } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import {activeSewerSizeGet} from '../../Api/ApiService'
 
@@ -16,11 +16,26 @@ function MainList(){
     const [ActiveSewerSize, SetActiveSewerSize] = useState(0);
     const[PrevActiveSewerSize, SetPrevActiveSewerSize] = useState(0);
     const [count, setCount] = useState(0);
-    console.log(getBoard)
+    const [count2, setCount2] = useState(0);
+
+   
+
+
+
+
+   // console.log(getBoard)
     function showInfo(id){
         window.location.href = `/info/${id}`
     }
     // 처음 렌더링 
+    useEffect(()=>{
+
+        activeSewerSizeGet().then((res)=>{
+            SetActiveSewerSize(res.data.activeSewerListSize);
+            sessionStorage.setItem('prev',res.data.activeSewerListSize);
+        })
+
+    },[])
 
 
     useEffect(() => {
@@ -32,50 +47,70 @@ function MainList(){
         console.log(1)
       }, [isView, getBoard]);
 
-     
 
-    //   useEffect(()=>{
-    //     setTimeout(()=>{
-    //         setCount(count + 1);
-    //         console.log(count)
-    //         console.log("blockueseffect");
+
+      // 활성화 하수구 감지 
+      useEffect(()=>{
+        setTimeout(()=>{
+            setCount2(count2 + 1);
+           //console.log(count)
+            //console.log("activeueseffect");
     
-    //         },5000)
+            },3000)
+   
+        const now  = sessionStorage.getItem('now')
+        const prev = sessionStorage.getItem('prev')
+
+        const intnow = parseInt(now)
+        const intprev = parseInt(prev)
+        
+
+        console.log(prev)
+
+      
+
+        
+        if
+        (intnow < intprev){
+            sessionStorage.setItem("prev",intnow)
+            console.log("삭제")
+            alert("활성화 하수구가 삭제 되었습니다.")
+        }
+        else if(intnow> intprev){
+            sessionStorage.setItem("prev",intnow)
+            console.log("추가")
+            alert("활성화 하수구가 추가 되었습니다.")
+
+        }
+
+      },[count2])
+
+
+
+
+
+      useEffect(()=>{
+        setTimeout(()=>{
+            setCount(count + 1);
+           // console.log(count)
+            //console.log("activeueseffect");
+    
+            },3000)
             
 
-    //         activeSewerSizeGet().then((res)=>{
-    //             SetActiveSewerSize(res.data.activeSewerListSize);
-    //         })
-    //         // 만약 이전 상태와 현재 상태가 같지 않다면
-    //         if(PrevActiveSewerSize !== ActiveSewerSize){
+            activeSewerSizeGet().then((res)=>{
+                SetActiveSewerSize(res.data.activeSewerListSize);
+                sessionStorage.setItem('now',res.data.activeSewerListSize);
+            })
+            // 만약 이전 상태와 현재 상태가 같지 않다면
+           
+            
+           
 
-    //             if(PrevActiveSewerSize <ActiveSewerSize){
-    //                 if(PrevActiveSewerSize === 0){
-    //                     //alert("활성된 상태의 하수구가 있습니다.")
-    //                     if(ActiveSewerSize === 1){
-    //                         alert("활성된 상태의 하수구가 추가되었습니다.")
-    //                         SetPrevActiveSewerSize(ActiveSewerSize);
-    //                     }else{
-    //                         SetPrevActiveSewerSize(ActiveSewerSize);
-    //                     }
-    //                 }else{
-    //                     alert("활성된 상태의 하수구가 추가되었습니다.")
-    //                     SetPrevActiveSewerSize(ActiveSewerSize);
+      },[count])
 
-    //                 }
-                    
-    //             }
-    //             else{
-    //                 SetPrevActiveSewerSize(ActiveSewerSize);
-    //             }                
-    //         }
-    //         if(count === 10000){
-    //             setCount(0)
-    //           }
-    //           console.log(PrevActiveSewerSize)
-    //           console.log(ActiveSewerSize)
 
-    //   },[count])
+     
 
 
    
@@ -90,7 +125,7 @@ function MainList(){
                 <Grid item xs={10} sm={10}>
                     <div className="MainListbuttonflex">
                      <button className="Main_listbutton">
-                        내 근처 우수관
+                        활성화 우수관
                         </button>
 
                     </div>
