@@ -1,5 +1,5 @@
 import React from "react";
-import "../CSS/MainHeader.css";
+import "../Css/MainHeader.css";
 import {signout} from '../../Api/ApiService'
 import { Grid } from "@material-ui/core";
 import kleanicon from "../../LoginPage/IMG/MainHeaderMainIcon.png"
@@ -25,7 +25,7 @@ function MainHeader(){
                 <Grid item xs={9} sm={9} id= "MainHeaderGrid2"></Grid>
                 <Grid item xs={2} sm={2} id= "MainHeaderGrid3">
                     <Grid container id="MainHeaderGG">
-                        <Grid item xs={6} sm={6} id="MainHeaderGG1"><div className="MainHeaderGrid2div"><button onClick={signout} className="LogoutButton">로그아웃</button><p>언어변경</p></div></Grid>
+                        <Grid item xs={6} sm={6} id="MainHeaderGG1"><div className="MainHeaderGrid2div"><button onClick={signout} className="LogoutButton">로그아웃</button><p className="change">언어변경</p></div></Grid>
                         <Grid item xs={6} sm={6} id="MainHeaderGG2">
                             <Grid container id="MainHeaderGIcon">
                                 <Grid item xs={6} sm={6} id="MainHeaderGI1"><div className="MainHeaderGridI"><img src={headericon} className="headerIcon"></img></div></Grid>

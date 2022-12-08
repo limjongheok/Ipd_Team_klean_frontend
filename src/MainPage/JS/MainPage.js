@@ -3,7 +3,7 @@ import { Grid } from "@material-ui/core";
 import MainGraph from "./MainGraph";
 import MainList from "./MainList";
 import MainHeader from "./MainHeader"
-import "../CSS/MainPage.css"
+import "../Css/MainPage.css"
 
 
 
@@ -14,7 +14,7 @@ function MainPage(){
     return(
         <div id = "MainPage">
              
-            <Grid container >
+            <Grid container id="container" >
                 <Grid item sm={12} id = "MainHeader">
                     
                         <MainHeader />

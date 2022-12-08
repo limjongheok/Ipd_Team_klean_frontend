@@ -69,9 +69,14 @@
     color: #ffffff;
     background-color: rgb(90, 138, 239); 
     border: none;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-family: Pretendard Variable;
     font-weight: 300;
+}
+.change{
+    font-weight: 300;
+    font-size: 0.7rem;
+
 }
 #MainHeaderGIcon{
     width: 100%;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import "../CSS/MainGraph.css";
+import "../Css/MainGraph.css";
 import MainGraphLabel from "./MainGraphLabel";
 import MainGraphLineGraph from "./MainGraphLineGraph";
 import MainGraphBarGraph from "./MainGraphBarGraph";

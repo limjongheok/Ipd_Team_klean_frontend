@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts"; 
-import "../CSS/MainGraphBarGraph.css";
+import "../Css/MainGraphBarGraph.css";
 import { Grid } from "@material-ui/core";
 import {  useQuery } from '@tanstack/react-query'
 import axios from "axios";

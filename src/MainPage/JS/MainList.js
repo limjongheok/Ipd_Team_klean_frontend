@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../CSS/MainList.css"
+import "../Css/MainList.css"
 
 import {useInfiniteScrollQery} from "./UseInfiniteScrollerQuery"
 import { useInView } from "react-intersection-observer";

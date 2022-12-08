@@ -5,6 +5,15 @@ import {sewerInfoGet} from "../../Api/ApiService";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import {  useQuery } from '@tanstack/react-query'
+import moon from "../IMG/달-07.png"
+import temparather from "../IMG/온도-05.png"
+import humidity from "../IMG/습도-04.png"
+import deepth from "../IMG/쓰레기깊이-05.png"
+import smell from "../IMG/악취-04.png"
+import battery from "../IMG/배터리-06.png"
+import block from "../IMG/block.png"
+
+
 
 
 function InfoInfo(){
@@ -106,7 +115,7 @@ function InfoInfo(){
 
 
     return(
-        <Grid container id= "InfoContainer" >
+        <Grid container id= "InfoContainer"  >
             <Grid item xs={12} sm={12} id="Info1">
                 <Grid container id="InfoButton">
                     <Grid item xs={1} sm={1}></Grid>
@@ -115,9 +124,7 @@ function InfoInfo(){
                 </Grid>
                 
             </Grid>
-            <Grid item xs={12} sm={12} id="InfoMain">
-                
-                
+            <Grid item xs={12} sm={12} id="InfoMain">               
                 
                 <Grid container id="InfoMainContainer">
                     <Grid item xs={1} sm={1} id="InfoMain1"></Grid>
@@ -126,7 +133,7 @@ function InfoInfo(){
                             <Grid item xs={1} sm={1}></Grid>
                             <Grid item xs={10} sm={10}>
                                 <div className="InfoMainHeaderContent">
-                                    <p>{InfoAddressName}</p>
+                                    {InfoAddressName}
                                 </div>
                             </Grid>
                             <Grid item xs={1} sm={1}></Grid>
@@ -135,20 +142,20 @@ function InfoInfo(){
                         <Grid container id="InfoMainContentContainer">
                             <Grid item xs={12} xm={12} id="InfoMainContents">
                                 <Grid container id="Contents">
-                                    <Grid item xs={6} sm={6 } id="Contentgrid"> <div className="Contentdiv"><p className="Contentp">온도 :  {InfoNowTemperature}</p></div></Grid>
-                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv2"><div className="Contentdiv3"><p  id="contentp1">막힌 횟수 : {InfoBlockCount}</p><p id="contentp2">마지막 : <br/>{InfoBlockDate}<br/>{InfoBlockTime}</p></div></div></Grid>
+                                    <Grid item xs={6} sm={6 } id="Contentgrid"> <div className="Contentdiv"><img src={temparather}id="img"/> <p >온도 :  {InfoNowTemperature}</p></div></Grid>
+                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv2"><img src={block} id="img"/><div className="Contentdiv3"><p  id="contentp1">막힌 횟수 : {InfoBlockCount}</p><p id="contentp2">마지막 : <br/><p className="time">{InfoBlockDate}/{InfoBlockTime}</p></p></div></div></Grid>
                                 </Grid>
                             </Grid>
                             <Grid item xs={12} xm={12} id="InfoMainContents">
                                 <Grid container id="Contents">
-                                    <Grid item xs={6} sm={6} id="Contentgrid"><div className="Contentdiv"> <p>습도 : {InfoNowHumidity}</p></div></Grid>
-                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv2"><div className="Contentdiv3"><p id="contentp1">악취 빈도 : {InfoSmallCount}</p><p id="contentp2">마지막 : {InfoSmallDate}<br/>{InfoSmallTime} </p></div></div></Grid>
+                                    <Grid item xs={6} sm={6} id="Contentgrid"><div className="Contentdiv"><img src={humidity} id="img"/> <p>습도 : {InfoNowHumidity}</p></div></Grid>
+                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv2"><img src={smell} id="img"/><div className="Contentdiv3"><p id="contentp1">악취 빈도 : {InfoSmallCount}</p><p id="contentp2">마지막 : {InfoSmallDate}<br/>{InfoSmallTime} </p></div></div></Grid>
                                 </Grid>
                             </Grid>
                             <Grid item xs={12} xm={12} id="InfoMainContents">
                                 <Grid container id="Contents">
-                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv"><p>쓰레기 쌓임 :  {InfoBlockValue}</p></div></Grid>
-                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv2"><div className="Contentdiv3"> <p id="contentp1e">베터리: </p><p id="contentp2">{InfoBatteryValue}</p></div ></div></Grid>
+                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv"><img src={deepth} id="img"/><p> 쌓임 :  {InfoBlockValue}</p></div></Grid>
+                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv"><img src={battery} id="img"/><p id="contentp1">베터리: {InfoBatteryValue}</p></div ></Grid>
                                 </Grid>
                             </Grid>
 
