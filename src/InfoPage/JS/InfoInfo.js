@@ -6,12 +6,12 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import {  useQuery } from '@tanstack/react-query'
 import moon from "../IMG/달-07.png"
-import temparather from "../IMG/온도-05.png"
-import humidity from "../IMG/습도-04.png"
-import deepth from "../IMG/쓰레기깊이-05.png"
-import smell from "../IMG/악취-04.png"
-import battery from "../IMG/배터리-06.png"
-import block from "../IMG/block.png"
+import temparather from "../IMG/온도.svg"
+import humidity from "../IMG/물방울.svg"
+import deepth from "../IMG/깊이.svg"
+import smell from "../IMG/악취.svg"
+import battery from "../IMG/베터리.svg"
+import block from "../IMG/막힘.svg"
 
 
 
