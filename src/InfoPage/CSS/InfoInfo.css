@@ -112,8 +112,8 @@
 }
 
 #img{
-    width: 20%;
-    height: 30%;
+    width: 30%;
+    height: 40%;
     margin-right: 0.6rem;
 
 }
@@ -144,7 +144,7 @@
     font-family: Pretendard Variable;
 }
 #contentp1{
-    margin-bottom: 0.3rem;
+    margin-bottom: 1rem;
     font-size: 1rem;
     font-family: Pretendard Variable;
    
