@@ -78,9 +78,9 @@ function InfoInfo(){
             SetBlockValue(data.blockValue);
             const humi = data.nowHumidity;
 
-            SetInfoNowHumidity(humi.toFixed(2));
+            SetInfoNowHumidity(humi.toFixed(1));
             const temper = data.nowTemperature;
-            SetInfoNowTemperature(temper.toFixed(2));
+            SetInfoNowTemperature(temper.toFixed(1));
             SetInfoRegionname(data.region_name);
             SetInfoSmallCount(data.smallCount);
             SetInfoSmallDate(data.smallDate);
