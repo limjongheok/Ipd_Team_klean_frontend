@@ -24,10 +24,10 @@ function InfoInfo(){
     const[InfoBlockDate, SetInfoBlockDate] = useState();
     const[InfoBlockTime, SetInfoBlockTime] = useState();
     const[InfoBlockValue, SetBlockValue] = useState();
-    const[InfoNowHumidity, SetInfoNowHumidity] = useState();
-    const[InfoNowTemperature, SetInfoNowTemperature] = useState();
+    const[InfoNowHumidity, SetInfoNowHumidity] = useState(0);
+    const[InfoNowTemperature, SetInfoNowTemperature] = useState(0);
     const[InfoRegionname , SetInfoRegionname] = useState();
-    const[InfoSmallCount, SetInfoSmallCount] = useState();
+    const[InfoSmallCount, SetInfoSmallCount] = useState(0);
     const[InfoSmallDate, SetInfoSmallDate] = useState();
     const[InfoSmallTime, SetInfoSmalltime] = useState();
     const[InfoState, SetInfoState] = useState();
@@ -73,11 +73,13 @@ function InfoInfo(){
           console.log("infoinfousequerry")
             SetInfoAddressName(data.address_name);
             SetInfoBlockCount(data.blockCount);
+            
             SetInfoBlockDate(data.blockDate);
             SetInfoBlockTime(data.blockTime);
-            SetBlockValue(data.blockValue);
-            const humi = data.nowHumidity;
+            const distancevalue = data.blockValue;
 
+            SetBlockValue(distancevalue.toFixed(0));
+            const humi = data.nowHumidity;
             SetInfoNowHumidity(humi.toFixed(1));
             const temper = data.nowTemperature;
             SetInfoNowTemperature(temper.toFixed(1));
@@ -88,6 +90,7 @@ function InfoInfo(){
             SetInfoState(data.state);
             SetInfoLatitude(data.latitude);
             SetInfoLongtitude(data.longtitude);
+            const batterv = data.batteryValue;
             SetInfoBatteryValue(data.batteryValue);
             SetInfoBatteryDate(data.batteryDate);
             SetInfoBatteryTime(data.batteryTime);
@@ -118,7 +121,8 @@ function InfoInfo(){
 
 
     return(
-        <Grid container id= "InfoContainer"  >
+        <Grid container id= "InfoContainer" spacing={0} justifyContent="center" 
+        alignItems="center"  >
             <Grid item xs={12} sm={12} id="Info1">
                 <Grid container id="InfoButton">
                     <Grid item xs={1} sm={1}></Grid>
@@ -131,7 +135,7 @@ function InfoInfo(){
                 
                 <Grid container id="InfoMainContainer">
                     <Grid item xs={1} sm={1} id="InfoMain1"></Grid>
-                    <Grid item xs={10} sm={10} id="InfoMainContent">
+                    <Grid item xs={12} sm={10} id="InfoMainContent">
                         <Grid container id="InfoMainheader">
                             <Grid item xs={1} sm={1}></Grid>
                             <Grid item xs={10} sm={10}>
@@ -145,20 +149,20 @@ function InfoInfo(){
                         <Grid container id="InfoMainContentContainer">
                             <Grid item xs={12} xm={12} id="InfoMainContents">
                                 <Grid container id="Contents">
-                                    <Grid item xs={6} sm={6 } id="Contentgrid"> <div className="Contentdiv"><img src={temparather}id="img"/> <p >온도 :  {InfoNowTemperature}</p></div></Grid>
-                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv2"><img src={block} id="img"/><div className="Contentdiv3"><p  id="contentp1">막힌 횟수 : {InfoBlockCount}</p><p id="contentp2">마지막 : <br/><p className="time">{InfoBlockDate}/{InfoBlockTime}</p></p></div></div></Grid>
+                                    <Grid item xs={6} sm={6 } id="Contentgrid"> <div className="Contentdiv"><img src={temparather}id="img"/> <p >온도 :  {InfoNowTemperature} &nbsp;°C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div></Grid>
+                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv2"><img src={block} id="img"/><div className="Contentdiv3"><p  id="contentp1">총 막힌 횟수 : {InfoBlockCount} 회</p><p id="contentp2"><br/><p className="time">측정시간: &nbsp; {InfoBlockDate}/{InfoBlockTime}</p></p></div></div></Grid>
                                 </Grid>
                             </Grid>
                             <Grid item xs={12} xm={12} id="InfoMainContents">
                                 <Grid container id="Contents">
-                                    <Grid item xs={6} sm={6} id="Contentgrid"><div className="Contentdiv"><img src={humidity} id="img"/> <p>습도 : {InfoNowHumidity}</p></div></Grid>
-                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv2"><img src={smell} id="img"/><div className="Contentdiv3"><p id="contentp1">악취 빈도 : {InfoSmallCount}</p><p id="contentp2">마지막 : {InfoSmallDate}<br/>{InfoSmallTime} </p></div></div></Grid>
+                                    <Grid item xs={6} sm={6} id="Contentgrid"><div className="Contentdiv"><img src={humidity} id="img"/> <p>습도 : {InfoNowHumidity}&nbsp; %<span className="rh"> [RH]</span></p></div></Grid>
+                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv2"><img src={smell} id="img"/><div className="Contentdiv3"><p id="contentp1">&nbsp;   총 악취 빈도 : {InfoSmallCount} 회&nbsp;&nbsp;</p><p className="time">측정시간: {InfoSmallDate}<br/>{InfoSmallTime} </p></div></div></Grid>
                                 </Grid>
                             </Grid>
                             <Grid item xs={12} xm={12} id="InfoMainContents">
                                 <Grid container id="Contents">
-                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv"><img src={deepth} id="img"/><p> 쌓임 :  {InfoBlockValue}</p></div></Grid>
-                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv"><img src={battery} id="img"/><p id="contentp1">베터리: {InfoBatteryValue}</p></div ></Grid>
+                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv"><img src={deepth} id="img"/><p> 쌓임 :  {InfoBlockValue}&nbsp; &nbsp; mm</p></div></Grid>
+                                    <Grid item xs={6} sm={6} id="Contentgrid"> <div className="Contentdiv"><img src={battery} id="img"/><p id="contentp1">베터리: {InfoBatteryValue} %  &nbsp; &nbsp; &nbsp;<br className="br"></br> &nbsp;</p></div ></Grid>
                                 </Grid>
                             </Grid>
 

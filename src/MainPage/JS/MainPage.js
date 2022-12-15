@@ -15,16 +15,16 @@ function MainPage(){
         <div id = "MainPage">
              
             <Grid container id="container" >
-                <Grid item sm={12} id = "MainHeader">
+                <Grid item  sx={12} sm={12} id = "MainHeader">
                     
                         <MainHeader />
                 
                     
                 </Grid>
-                <Grid item sm={7} id="MainGraph" >
+                <Grid item sx={12} sm={7} id="MainGraph" >
                     <MainGraph/>
                 </Grid>
-                <Grid item sm={5} id= "MainList">
+                <Grid item sx={12}  sm={5} id= "MainList">
                     <MainList/>
                 </Grid>
 

@@ -12,6 +12,7 @@
 #InfoGraph{
     height: 91vh;
     background-color: rgb(246, 247, 251 );
+    
 }
 
 #InfoInfo{
@@ -28,4 +29,35 @@
 
 
 
+@media  all and (max-width:1024px) {
+    #container{
+        width: 100%;
+        height: 100%;
+    }
+    #InfoPage{
+        height: 100vh;
+        width: 100%;
+    }
+    
+    
+    #InfoGraph{
+        height: 91vh;
+        background-color: rgb(246, 247, 251 );
+        display:  none;
+        
+    }
+    
+    #InfoInfo{
+        height: 85vh;
+        width: 100%;
+        
+    }
+    
+    #InfoHeader{
+        height: 9vh;
+        width: 100%;
+    }
+    
+    
+}
 

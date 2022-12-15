@@ -23,10 +23,10 @@ function InfoPage(){
                         <Header />
                      
                 </Grid>
-                <Grid item sx={7} sm={7} id="InfoGraph" >
+                <Grid item sx={12} sm={7} id="InfoGraph" >
                     <InfoGraph/>
                 </Grid>
-                <Grid item sx={5} sm={5} id= "InfoInfo">
+                <Grid item sx={12} sm={5} id= "InfoInfo">
                     <InfoInfo/>
                 </Grid>
 

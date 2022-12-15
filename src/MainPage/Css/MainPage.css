@@ -19,6 +19,37 @@
 
 #MainHeader{
     height: 9vh;
+    width: 100%;
 }
 
+
+
+@media  all and (max-width:1024px) {
+    #MainPage{
+        height: 100vh;
+        width: 100%;
+    }
+    
+    
+    #MainGraph{
+        height:100vh;
+        background-color: #ffffff;
+        display: none;
+    
+        /* background-color: rgb(246, 247, 251 ); */
+    }
+    
+    #MainList{
+        height: 90vh;
+        width: 100%;
+        
+    }
+    
+    #MainHeader{
+        height: 9vh;
+        width: 100%;
+    }
+    
+    
+}
 

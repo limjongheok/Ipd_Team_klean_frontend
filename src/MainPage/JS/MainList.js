@@ -56,7 +56,7 @@ function MainList(){
            //console.log(count)
             //console.log("activeueseffect");
     
-            },3000)
+            },1000)
    
         const now  = sessionStorage.getItem('now')
         const prev = sessionStorage.getItem('prev')
