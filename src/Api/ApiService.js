@@ -131,4 +131,3 @@ export const sewerInfoGet = (id) =>{
   return call(`/active/sewer/info/${id}`)
 }
 
-

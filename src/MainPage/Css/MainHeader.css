@@ -89,7 +89,7 @@
     color: #ffffff;
     background-color: rgb(90, 138, 239); 
     border: none;
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-family: Pretendard Variable;
     font-weight: 300;
 }
@@ -98,8 +98,13 @@
 
 /* 언어 변경 폰트  */
 .change{
+    background-color: rgb(90, 138, 239); 
+    border: none;
+    color: #ffffff;
     font-weight: 300;
-    font-size: 0.7rem;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
 
 }
 
