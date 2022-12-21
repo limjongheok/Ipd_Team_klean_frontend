@@ -46,6 +46,10 @@ function InfoInfo(){
 
     }
 
+    function ShowVideo(){
+        window.open(`http://192.168.0.2:6148/cam/${params.id}`)
+
+    }
 
 
 
@@ -126,7 +130,7 @@ function InfoInfo(){
             <Grid item xs={12} sm={12} id="Info1">
                 <Grid container id="InfoButton">
                     <Grid item xs={1} sm={1}></Grid>
-                    <Grid item xs={10} sm={10}><div className="buttonDiv"><button className="Button" onClick={()=>ShowMap()}>해당 지도로 바로가기</button></div></Grid>
+                    <Grid item xs={10} sm={10}><div className="buttonDiv"><button className="Button" onClick={()=>ShowMap()}>해당 지도로 바로가기</button><button className="Button" onClick={()=>ShowVideo()}>해당 우수관 영상보기</button></div></Grid>
                     <Grid item xs={1} sm={1}></Grid>
                 </Grid>
                 

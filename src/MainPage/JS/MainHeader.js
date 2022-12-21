@@ -24,8 +24,8 @@ function MainHeader(){
                     </div>
                    
                 </Grid>
-                <Grid item xs={4} sm={8} id= "MainHeaderGrid2"></Grid>
-                <Grid item xs={6} sm={3} id= "MainHeaderGrid3">
+                <Grid item xs={3} sm={8} id= "MainHeaderGrid2"></Grid>
+                <Grid item xs={7} sm={3} id= "MainHeaderGrid3">
                     <Grid container id="MainHeaderGG">
                         <Grid item xs={7} sm={6} id="MainHeaderGG1"><div className="MainHeaderGrid2div"><button onClick={signout} className="LogoutButton">로그아웃</button><a href="http://211.57.119.81:8080/download/csv"className="change">download<br></br>csv</a></div></Grid>
                         <Grid item xs={5} sm={6} id="MainHeaderGG2">

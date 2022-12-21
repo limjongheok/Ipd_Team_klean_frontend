@@ -18,7 +18,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:   space-around;
     
 }
 .Button{
@@ -212,7 +212,7 @@
         height: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
+       justify-content:   space-around;
         
     }
     .Button{
@@ -222,7 +222,7 @@
         background-color:#249ffb;
         color: #ffff;
         border: none;
-        width: 10rem;
+        width: 8rem;
         height: 2.5rem;
         font-weight: 300;
     }
